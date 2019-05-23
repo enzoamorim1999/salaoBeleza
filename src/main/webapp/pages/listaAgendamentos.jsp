@@ -6,7 +6,7 @@
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
 <head>
-  <title>Lista de Serviços</title>
+  <title>Lista de Agendamentos</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="form-validation.css" rel="stylesheet">
@@ -60,21 +60,25 @@
   </div>
     <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Serviços</h1>
+<h1 class="ls-title-intro ">Agendamentos</h1>
   <thead>
     <tr>
-      <th>ID</th>
-      <th class="hidden-xs">Nome do Serviço</th>
+      <th>Nome</th>
+      <th class="hidden-xs">Serviço</th>
       <th>Valor</th>
-      <th> </th>
+      <th class="hidden-xs">Data</th>
+      <th>Status</th>
+      <th class="hidden-xs"> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
+      <td>Valentina</td>
       <td class="hidden-xs">Chapinha</td>
       <td>R$ 50,00</td>
-      <td>
+      <td class="hidden-xs">21/02/2018 as 08:00</td>
+      <td>Efetuado</td>
+      <td class="hidden-xs">
         <div>
           <a href="<%= request.getContextPath() + "/editarUsuario?id="%>${usuario.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
           <a href="" onclick="confirme(${usuario.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
@@ -82,10 +86,25 @@
       </td>
     </tr>
     <tr>
-      <td>2</td>
+      <td>Enzo</td>
       <td class="hidden-xs">Corte</td>
       <td>R$ 90,00</td>
-      <td>
+      <td class="hidden-xs">21/03/2018 as 13:00</td>
+      <td>Não efetuado</td>
+      <td class="hidden-xs">
+        <div>
+           <a href="<%= request.getContextPath() + "/editarUsuario?id="%>${usuario.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
+          <a href="" onclick="confirme(${usuario.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
+        </div>
+    </td>
+    </tr>
+    <tr>
+      <td>Enzo</td>
+      <td class="hidden-xs">Corte</td>
+      <td>R$ 90,00</td>
+      <td class="hidden-xs">21/03/2018 as 15:00</td>
+      <td>Cancelado</td>
+      <td class="hidden-xs">
         <div>
            <a href="<%= request.getContextPath() + "/editarUsuario?id="%>${usuario.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
           <a href="" onclick="confirme(${usuario.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
@@ -96,11 +115,14 @@
 </table>
 
       <div>
-        <a href="cadastroServico.html" class="btn btn-dark">Novo Serviço</a>
+        <a href="novoAgendamento.html" class="btn btn-dark">Novo Agendamento</a>
         <a href="index.html" class="btn btn-dark">Voltar</a>
       </div>
 
     </div>
+
+
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://assets.locaweb.com.br/locastyle/3.10.1/javascripts/locastyle.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

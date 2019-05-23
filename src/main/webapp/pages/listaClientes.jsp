@@ -6,7 +6,7 @@
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
 <head>
-  <title>Lista de Serviços</title>
+  <title>Lista de clientes</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="form-validation.css" rel="stylesheet">
@@ -60,20 +60,22 @@
   </div>
     <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Serviços</h1>
+<h1 class="ls-title-intro ">Lista de Clientes</h1>
   <thead>
     <tr>
-      <th>ID</th>
-      <th class="hidden-xs">Nome do Serviço</th>
-      <th>Valor</th>
-      <th> </th>
+      <th>Nome</th>
+      <th class="hidden-xs">Telefone</th>
+      <th>CPF</th>
+      <th class="hidden-xs">Últimos Agendamentos</th>
+      <th> OleleOlala</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td class="hidden-xs">Chapinha</td>
-      <td>R$ 50,00</td>
+      <td>Carla Santos</td>
+      <td class="hidden-xs">11 95151-5252</td>
+      <td>12345678900</td>
+      <td class="hidden-xs">21/06/2018 as 15:00</td>
       <td>
         <div>
           <a href="<%= request.getContextPath() + "/editarUsuario?id="%>${usuario.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
@@ -82,9 +84,10 @@
       </td>
     </tr>
     <tr>
-      <td>2</td>
-      <td class="hidden-xs">Corte</td>
-      <td>R$ 90,00</td>
+      <td>Giulia Valentina</td>
+      <td class="hidden-xs">12 95353-5454</td>
+      <td>12345678900</td>
+      <td class="hidden-xs">10/01/2019 as 08:00</td>
       <td>
         <div>
            <a href="<%= request.getContextPath() + "/editarUsuario?id="%>${usuario.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
@@ -96,11 +99,14 @@
 </table>
 
       <div>
-        <a href="cadastroServico.html" class="btn btn-dark">Novo Serviço</a>
+        <a href="cadastroCliente.html" class="btn btn-dark">Novo Usuário</a>
         <a href="index.html" class="btn btn-dark">Voltar</a>
       </div>
 
     </div>
+
+
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://assets.locaweb.com.br/locastyle/3.10.1/javascripts/locastyle.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

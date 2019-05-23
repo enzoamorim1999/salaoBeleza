@@ -6,7 +6,7 @@
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
 <head>
-  <title>Lista de Serviços</title>
+  <title>Novo Agendamento</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="form-validation.css" rel="stylesheet">
@@ -19,16 +19,6 @@
   <link href="http://assets.locaweb.com.br/locastyle/3.10.1/stylesheets/locastyle.css" rel="stylesheet" type="text/css">
   <link rel="icon" sizes="192x192" href="/locawebstyle/assets/images/ico-boilerplate.png">
   <link rel="apple-touch-icon" href="/locawebstyle/assets/images/ico-boilerplate.png">
-  <script>
-      function confirme(id) {
-          var txt;
-          var r = confirm("Deseja realmente excluir o funcionário?");
-          if (r == true) {
-              console.log(id);
-              window.location.href = window.location.origin + "/***/excluirUsuario?id=" + id;
-          }
-      }
-  </script>
 </head>
     <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
@@ -58,53 +48,77 @@
       </div>
   </nav>
   </div>
+<main>
     <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Serviços</h1>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th class="hidden-xs">Nome do Serviço</th>
-      <th>Valor</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td class="hidden-xs">Chapinha</td>
-      <td>R$ 50,00</td>
-      <td>
-        <div>
-          <a href="<%= request.getContextPath() + "/editarUsuario?id="%>${usuario.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
-          <a href="" onclick="confirme(${usuario.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
+<h1 class="ls-title-intro ">Agendamento</h1>
+      <form>
+      <div class="form-row">
+        <div class="col-md-3 mb-3">
+          <label for="validationServer01">CPF</label>
+          <input type="number" class="form-control" id="validationServer01" placeholder="Apenas números" required>
         </div>
-      </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td class="hidden-xs">Corte</td>
-      <td>R$ 90,00</td>
-      <td>
         <div>
-           <a href="<%= request.getContextPath() + "/editarUsuario?id="%>${usuario.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
-          <a href="" onclick="confirme(${usuario.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
+      <form class="form-inline">
+        <button class="btn btn-outline-dark btn btn-outline-success my-sm-3" type="submit">Buscar</button>
+      </form>
+    </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-3 mb-3">
+          <label for="validationServer03">Nome</label>
+          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
         </div>
-    </td>
-    </tr>
-  </tbody>
-</table>
+        <div class="col-md-3 mb-3">
+          <label for="validationServer03">Telefone</label>
+          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+          
+      </div>
+<div class="form-row">
+      <div class="form-group col-md-3 mb-3">
+            <label for="exampleFormControlSelect1">Serviço</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Batata</option>
+              <option>Atum</option>
+              <option>Olele</option>
+              <option>Olala</option>
+              <option>Heyyy</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3 mb-3">
+            <label for="exampleFormControlSelect1">Data</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Batata</option>
+              <option>Atum</option>
+              <option>Olele</option>
+              <option>Olala</option>
+              <option>Heyyy</option>
+            </select>
+          </div>
+</div>
 
       <div>
-        <a href="cadastroServico.html" class="btn btn-dark">Novo Serviço</a>
+        <button class="btn btn-dark" type="submit">Agendar</button>
+        <a href="cadastroCliente.html" class="btn btn-dark">Novo Usuário</a>
         <a href="index.html" class="btn btn-dark">Voltar</a>
       </div>
+    </form>  
+</div>
 
-    </div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://assets.locaweb.com.br/locastyle/3.10.1/javascripts/locastyle.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</div>
+
+</div>
+</main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+  </body>
 </html>
