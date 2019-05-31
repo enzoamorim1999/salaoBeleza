@@ -1,13 +1,13 @@
 <%-- 
-    Document   : cadastroCliente
-    Created on : 23/05/2019, 23/05/2019
+    Document   : cadastroServico
+    Created on : 23/05/2019,13:00:15 
     Author     : davi.msantos7
 --%>
 
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
 <head>
-  <title>Cadastrar Clientes</title>
+  <title>Cadastrar Serviço</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="form-validation.css" rel="stylesheet">
@@ -52,50 +52,28 @@
 <main>
     <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Cadastrar Clientes</h1>
-<form method="POST">
+<h1 class="ls-title-intro ">Cadastrar Serviço</h1>
+      <form>
       <div class="form-row">
         <div class="col-md-3 mb-3">
           <label for="validationServer01">Nome</label>
-          <input type="text" class="form-control" name="nome" id="validationServer01" placeholder="Primeiro nome" required>
+          <input type="text" class="form-control" id="validationServer01" placeholder="Corte" required>
           <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="validationServer02">CPF</label>
-          <input type="text" class="form-control"  name="cpf" id="validationServer02" placeholder="00000000" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="validationServer02">Telefone</label>
-          <input type="text" class="form-control" name="telefone" id="validationServer02" placeholder="00000000" required>
-          <di v class="valid-feedback">
             Looks good!
           </div>
         </div>
       </div>
-      
       <div class="form-row">
         <div class="col-md-3 mb-3">
-          <label for="validationServer03">Cidade</label>
-          <input type="text" class="form-control" name="cidade" id="validationServer03" placeholder="Sampa" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="validationServer03">Estado</label>
-          <input type="text" class="form-control" name="estado" id="validationServer03" placeholder="Sampa" required>
+          <label for="validationServer03">Valor</label>
+          <input type="number" class="form-control" id="validationServer03" placeholder="Sampa" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
       </div>
       <div>
-        <button class="btn btn-dark" type="submit">Criar Usuario</button>
+        <button class="btn btn-dark" type="submit">Criar Serviço</button>
         <a href="index.html" class="btn btn-dark">Voltar</a>
       </div>
     </form>  

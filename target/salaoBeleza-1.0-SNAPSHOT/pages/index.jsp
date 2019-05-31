@@ -1,13 +1,12 @@
-<%-- 
-    Document   : cadastroCliente
-    Created on : 23/05/2019, 23/05/2019
+<%--
+    Document   : cadastroServico
+    Created on : 23/05/2019,13:00:15
     Author     : davi.msantos7
 --%>
-
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
 <head>
-  <title>Cadastrar Clientes</title>
+  <title>Home</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="form-validation.css" rel="stylesheet">
@@ -21,7 +20,7 @@
   <link rel="icon" sizes="192x192" href="/locawebstyle/assets/images/ico-boilerplate.png">
   <link rel="apple-touch-icon" href="/locawebstyle/assets/images/ico-boilerplate.png">
 </head>
-    <div class="pos-f-t">
+  <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <ul class="nav justify-content-center">
@@ -49,61 +48,65 @@
       </div>
   </nav>
   </div>
-<main>
-    <div class="ls-box">
+  <main role="main">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Bem vindo</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Cadastrar Clientes</h1>
-<form method="POST">
-      <div class="form-row">
-        <div class="col-md-3 mb-3">
-          <label for="validationServer01">Nome</label>
-          <input type="text" class="form-control" name="nome" id="validationServer01" placeholder="Primeiro nome" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="validationServer02">CPF</label>
-          <input type="text" class="form-control"  name="cpf" id="validationServer02" placeholder="00000000" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="validationServer02">Telefone</label>
-          <input type="text" class="form-control" name="telefone" id="validationServer02" placeholder="00000000" required>
-          <di v class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-      </div>
-      
-      <div class="form-row">
-        <div class="col-md-3 mb-3">
-          <label for="validationServer03">Cidade</label>
-          <input type="text" class="form-control" name="cidade" id="validationServer03" placeholder="Sampa" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="validationServer03">Estado</label>
-          <input type="text" class="form-control" name="estado" id="validationServer03" placeholder="Sampa" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
-        </div>
+      <div class="col-md-5 mb-3">
+        <h1 class="ls-title-intro ">Agendamentos do Dia</h1>
       </div>
       <div>
-        <button class="btn btn-dark" type="submit">Criar Usuario</button>
-        <a href="index.html" class="btn btn-dark">Voltar</a>
+      <form class="form-inline col-md-4 mb-3">
+        <input type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Buscar</button>
+      </form>
+    </div>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th class="hidden-xs">CPF</th>
+      <th>Serviço</th>
+      <th class="hidden-xs">Horário</th>
+      <th> Valor</th>
+      <th class="hidden-xs">Telefone</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Carla Santos</td>
+      <td class="hidden-xs">12345678900</td>
+      <td>Progressiva</td>
+      <td class="hidden-xs">08:00</td>
+      <td>R$ 130,00</td>
+      <td class="hidden-xs">11 95151-5252</td>
+      <td>Efetuado</td>
+    </tr>
+    <tr>
+      <td>Giulia Valentina</td>
+      <td class="hidden-xs">98765432100</td>
+      <td>Chapinha</td>
+      <td class="hidden-xs">15:00</td>
+      <td>R$ 30,00</td>
+      <td class="hidden-xs">12 95353-5454</td>
+      <td>Cancelado</td
+    </tr>
+  </tbody>
+</table>
+<div>
+        <a href="novoAgendamento.html" class="btn btn-dark">Novo Agendamento</a>
       </div>
-    </form>  
-</div>
-</div>
-
-</div>
-</main>
+    </div>
+    </div>
+    <hr>
+  </div> <!-- /container -->
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

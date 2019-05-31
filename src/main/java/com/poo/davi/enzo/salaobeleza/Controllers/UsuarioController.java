@@ -5,10 +5,36 @@
  */
 package com.poo.davi.enzo.salaobeleza.Controllers;
 
+import com.poo.davi.enzo.salaobeleza.DAO.UsuarioDAO;
+import com.poo.davi.enzo.salaobeleza.Model.Cliente;
+import java.util.ArrayList;
+
 /**
  *
  * @author Casa
  */
 public class UsuarioController {
+
+    public static boolean salvar(Cliente usuario) {
+
+        return UsuarioDAO.salvar(usuario);
+
+    }
+
+    public static ArrayList<Cliente> listaUsuarios() {
+        return UsuarioDAO.listaUsuarios();
+    }
+
+    public static boolean atualizar(Cliente cliente) {
+
+        return UsuarioDAO.atualizar(cliente);
+
+    }
     
+    public static Cliente buscaPorId(int id) {
+       
+        return UsuarioDAO.buscaPorId(id);
+        
+    }
+
 }

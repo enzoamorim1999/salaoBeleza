@@ -53,71 +53,49 @@
     <div class="ls-box">
     <table class="ls-table">
 <h1 class="ls-title-intro ">Cadastrar Clientes</h1>
-      <form>
+<form method="POST">
       <div class="form-row">
         <div class="col-md-3 mb-3">
           <label for="validationServer01">Nome</label>
-          <input type="text" class="form-control" id="validationServer01" placeholder="Primeiro nome" required>
+          <input type="text" class="form-control" name="nome" id="validationServer01" placeholder="Primeiro nome" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-2 mb-3">
           <label for="validationServer02">CPF</label>
-          <input type="text" class="form-control" id="validationServer02" placeholder="00000000" required>
+          <input type="text" class="form-control"  name="cpf" id="validationServer02" placeholder="00000000" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-2 mb-3">
           <label for="validationServer02">Telefone</label>
-          <input type="text" class="form-control" id="validationServer02" placeholder="00000000" required>
-          <div class="valid-feedback">
+          <input type="text" class="form-control" name="telefone" id="validationServer02" placeholder="00000000" required>
+          <di v class="valid-feedback">
             Looks good!
           </div>
         </div>
       </div>
-      <div class="form-row">
-        <div class="col-md-3 mb-3">
-          <label for="validationServer03">CEP</label>
-          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="validationServer03">Rua</label>
-          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="validationServer03">Número</label>
-          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
-        </div>
-      </div>
+      
       <div class="form-row">
         <div class="col-md-3 mb-3">
           <label for="validationServer03">Cidade</label>
-          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
+          <input type="text" class="form-control" name="cidade" id="validationServer03" placeholder="Sampa" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
         <div class="col-md-1 mb-3">
           <label for="validationServer03">Estado</label>
-          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
+          <input type="text" class="form-control" name="estado" id="validationServer03" placeholder="Sampa" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
       </div>
       <div>
-        <button class="btn btn-dark" type="submit">Criar usuário</button>
+        <button class="btn btn-dark" type="submit">Criar Usuario</button>
         <a href="index.html" class="btn btn-dark">Voltar</a>
       </div>
     </form>  

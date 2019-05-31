@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.poo.davi.enzo.salaobeleza;
+package com.poo.davi.enzo.salaobelezaServelets;
 
+import com.poo.davi.enzo.salaobeleza.Controllers.UsuarioController;
+import com.poo.davi.enzo.salaobeleza.Model.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -19,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Casa
  */
 @WebServlet(name = "cadastroUsuario", urlPatterns = {"/cadastroCliente"})
-public class cadastroUsuario extends HttpServlet {
+public class cadastroCliente extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -42,6 +44,23 @@ public class cadastroUsuario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        Cliente cliente = new Cliente(request.getParameter("nome"),
+                Integer.parseInt(request.getParameter("cpf")),
+                Integer.parseInt(request.getParameter("telefone")),
+                request.getParameter("cidade"),
+                request.getParameter("estado"));
+        
+        
+        
+       if (UsuarioController.salvar(cliente)) {
+            response.sendRedirect(request.getContextPath() + "/cadastroCliente?salvo=true");
+        } else {
+            request.setAttribute("salvo", "false");
+            response.sendRedirect(request.getContextPath() + "/cadastroProduto?salvo=false");
+        }
+        
+        
+        
     }
 
 }

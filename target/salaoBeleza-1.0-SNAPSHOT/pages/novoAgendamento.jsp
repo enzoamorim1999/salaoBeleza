@@ -1,13 +1,12 @@
-<%-- 
-    Document   : cadastroCliente
-    Created on : 23/05/2019, 23/05/2019
-    Author     : davi.msantos7
+<%--
+    Document   : listaAgendamentos
+    Created on : 23/05/2019, 13:02:45
+    Author     : DaviMarques
 --%>
-
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
 <head>
-  <title>Cadastrar Clientes</title>
+  <title>Novo Agendamento</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="form-validation.css" rel="stylesheet">
@@ -52,54 +51,67 @@
 <main>
     <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Cadastrar Clientes</h1>
-<form method="POST">
+<h1 class="ls-title-intro ">Agendamento</h1>
+      <form>
       <div class="form-row">
         <div class="col-md-3 mb-3">
-          <label for="validationServer01">Nome</label>
-          <input type="text" class="form-control" name="nome" id="validationServer01" placeholder="Primeiro nome" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+          <label for="validationServer01">CPF</label>
+          <input type="number" class="form-control" id="validationServer01" placeholder="Apenas números" required>
         </div>
-        <div class="col-md-2 mb-3">
-          <label for="validationServer02">CPF</label>
-          <input type="text" class="form-control"  name="cpf" id="validationServer02" placeholder="00000000" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="validationServer02">Telefone</label>
-          <input type="text" class="form-control" name="telefone" id="validationServer02" placeholder="00000000" required>
-          <di v class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
+        <div>
+      <form class="form-inline">
+        <button class="btn btn-outline-dark btn btn-outline-success my-sm-3" type="submit">Buscar</button>
+      </form>
+    </div>
       </div>
-      
       <div class="form-row">
         <div class="col-md-3 mb-3">
-          <label for="validationServer03">Cidade</label>
-          <input type="text" class="form-control" name="cidade" id="validationServer03" placeholder="Sampa" required>
+          <label for="validationServer03">Nome</label>
+          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
-        <div class="col-md-1 mb-3">
-          <label for="validationServer03">Estado</label>
-          <input type="text" class="form-control" name="estado" id="validationServer03" placeholder="Sampa" required>
+        <div class="col-md-3 mb-3">
+          <label for="validationServer03">Telefone</label>
+          <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
+          
       </div>
+<div class="form-row">
+      <div class="form-group col-md-3 mb-3">
+            <label for="exampleFormControlSelect1">Serviço</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Batata</option>
+              <option>Atum</option>
+              <option>Olele</option>
+              <option>Olala</option>
+              <option>Heyyy</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3 mb-3">
+            <label for="exampleFormControlSelect1">Data</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Batata</option>
+              <option>Atum</option>
+              <option>Olele</option>
+              <option>Olala</option>
+              <option>Heyyy</option>
+            </select>
+          </div>
+</div>
+
       <div>
-        <button class="btn btn-dark" type="submit">Criar Usuario</button>
+        <button class="btn btn-dark" type="submit">Agendar</button>
+        <a href="cadastroCliente.html" class="btn btn-dark">Novo Usuário</a>
         <a href="index.html" class="btn btn-dark">Voltar</a>
       </div>
     </form>  
 </div>
+
 </div>
 
 </div>

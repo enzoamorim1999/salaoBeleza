@@ -1,13 +1,16 @@
 <%-- 
-    Document   : cadastroCliente
+    Document   : editarCliente
     Created on : 23/05/2019, 23/05/2019
     Author     : davi.msantos7
 --%>
 
+<%@page import="com.poo.davi.enzo.salaobeleza.Model.Cliente"%>
+<%@page import="java.util.ArrayList"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
 <head>
-  <title>Cadastrar Clientes</title>
+  <title>Editar Clientes</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="form-validation.css" rel="stylesheet">
@@ -32,7 +35,7 @@
           <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaAgendamentos.html">Agendamentos</a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaServicos.html">ServiÃ§os</a>
+          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaServicos.html">Serviços</a>
         </li>
         <li class="nav-item">
           <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaClientes.html">Clientes</a>
@@ -52,26 +55,27 @@
 <main>
     <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Cadastrar Clientes</h1>
+<h1 class="ls-title-intro ">Editar Clientes</h1>
 <form method="POST">
+    <% Cliente cliente = (Cliente) request.getAttribute("clientes");%>
       <div class="form-row">
         <div class="col-md-3 mb-3">
           <label for="validationServer01">Nome</label>
-          <input type="text" class="form-control" name="nome" id="validationServer01" placeholder="Primeiro nome" required>
+          <input type="text" class="form-control" name="nome" value="${cliente.getNome()}" id="validationServer01" placeholder="Primeiro nome" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-2 mb-3">
           <label for="validationServer02">CPF</label>
-          <input type="text" class="form-control"  name="cpf" id="validationServer02" placeholder="00000000" required>
+          <input type="text" class="form-control"  name="cpf" value="${cliente.getCpf()}" id="validationServer02" placeholder="00000000" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-2 mb-3">
           <label for="validationServer02">Telefone</label>
-          <input type="text" class="form-control" name="telefone" id="validationServer02" placeholder="00000000" required>
+          <input type="text" class="form-control" name="telefone" value="${cliente.getTelefone()}" id="validationServer02" placeholder="00000000" required>
           <di v class="valid-feedback">
             Looks good!
           </div>
@@ -81,21 +85,21 @@
       <div class="form-row">
         <div class="col-md-3 mb-3">
           <label for="validationServer03">Cidade</label>
-          <input type="text" class="form-control" name="cidade" id="validationServer03" placeholder="Sampa" required>
+          <input type="text" class="form-control" name="cidade" value="${cliente.getCidade()}" id="validationServer03" placeholder="Sampa" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
         <div class="col-md-1 mb-3">
           <label for="validationServer03">Estado</label>
-          <input type="text" class="form-control" name="estado" id="validationServer03" placeholder="Sampa" required>
+          <input type="text" class="form-control" name="estado" value="${cliente.getEstado()}" id="validationServer03" placeholder="Sampa" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
       </div>
       <div>
-        <button class="btn btn-dark" type="submit">Criar Usuario</button>
+        <button class="btn btn-dark" type="submit">Salvar</button>
         <a href="index.html" class="btn btn-dark">Voltar</a>
       </div>
     </form>  
@@ -110,3 +114,4 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+
