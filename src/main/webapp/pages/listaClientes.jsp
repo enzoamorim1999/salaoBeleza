@@ -25,10 +25,11 @@
         <script>
             function confirme(id) {
                 var txt;
-                var r = confirm("Deseja realmente excluir o funcionario?");
+                
+                var r = confirm("Deseja realmente excluir o cliente ?"+id);
                 if (r == true) {
                     console.log(id);
-                    window.location.href = window.location.origin + "/***/excluirUsuario?id=" + id;
+                    window.location.href = window.location.origin + "/salaoBeleza/excluirCliente?id=" + id;
                 }
             }
         </script>
@@ -94,7 +95,13 @@
                         <td>
                             <div>
                                 <a href="<%= request.getContextPath() + "/editarCliente?id="%>${clientes.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
-                                <a href="" onclick="confirme(${usuario.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
+
+                            </div>
+                            <div data-ls-module="dropdown" class="ls-dropdown ls-pos-right">
+                                <a href="#" class="ls-btn ls-btn-sm" role="combobox" aria-expanded="false"></a>
+                                <ul class="ls-dropdown-nav" aria-hidden="true">
+                                    <li><a href="" onclick="confirme(${clientes.getId()})" class="ls-color-danger" role="option">Excluir</a></li>
+                                </ul>
                             </div>
                         </td>
                     </tr>

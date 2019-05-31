@@ -7,6 +7,7 @@ com\poo\davi\enzo\salaobeleza\Controllers\ServicoController.class
 com\poo\davi\enzo\salaobeleza\Model\Cliente.class
 com\poo\davi\enzo\salaobelezaServelets\cadastroCliente.class
 com\poo\davi\enzo\salaobelezaServelets\listaServicos.class
+com\poo\davi\enzo\salaobelezaServelets\excluirCliente.class
 com\poo\davi\enzo\salaobeleza\DAO\ServicoDAO.class
 com\poo\davi\enzo\salaobelezaServelets\listaClientes.class
 com\poo\davi\enzo\salaobeleza\Controllers\AgendamentoController.class

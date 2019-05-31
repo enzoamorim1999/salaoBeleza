@@ -57,6 +57,22 @@ public class UsuarioDAO {
         }
     }
 
+    public static boolean excluir(int id) {
+        try {
+
+            Connection conexao = conectaBanco.conectaDB();
+            PreparedStatement comando = conexao.prepareStatement("DELETE FROM usuarios WHERE id = ?");
+
+            comando.setInt(1, id);
+            System.out.println("excluir---" + comando);
+            int linhasAfetadas = comando.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
     public static ArrayList<Cliente> listaUsuarios() {
         ArrayList<Cliente> listaUsuarios;
 
@@ -103,7 +119,7 @@ public class UsuarioDAO {
             comando.setString(5, cliente.getEstado());
             comando.setInt(6, cliente.getId());
 
-            System.out.println("atualizar"+ comando);
+            System.out.println("atualizar" + comando);
             int linhasAfetadas = comando.executeUpdate();
             return true;
         } catch (SQLException ex) {

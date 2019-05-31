@@ -36,5 +36,11 @@ public class UsuarioController {
         return UsuarioDAO.buscaPorId(id);
         
     }
+    
+    public static boolean excluir(int id) {
+
+        return UsuarioDAO.excluir(id);
+
+    }
 
 }
