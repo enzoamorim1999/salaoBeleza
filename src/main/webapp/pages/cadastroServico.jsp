@@ -32,7 +32,7 @@
           <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaAgendamentos.html">Agendamentos</a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaServicos.html">ServiÃ§os</a>
+          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaServicos.html">Serviços</a>
         </li>
         <li class="nav-item">
           <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaClientes.html">Clientes</a>
@@ -52,12 +52,12 @@
 <main>
     <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Cadastrar ServiÃ§o</h1>
-      <form>
+<h1 class="ls-title-intro ">Cadastrar Serviços</h1>
+      <form method="POST">
       <div class="form-row">
         <div class="col-md-3 mb-3">
           <label for="validationServer01">Nome</label>
-          <input type="text" class="form-control" id="validationServer01" placeholder="Corte" required>
+          <input type="text" class="form-control" name="nome" id="validationServer01" placeholder="Corte de cabelo" required>
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -65,15 +65,15 @@
       </div>
       <div class="form-row">
         <div class="col-md-3 mb-3">
-          <label for="validationServer03">Valor</label>
-          <input type="number" class="form-control" id="validationServer03" placeholder="Sampa" required>
+          <label for="validationServer03">Preço</label>
+          <input type="number" class="form-control" name="preco" id="validationServer03" placeholder="R$" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
       </div>
       <div>
-        <button class="btn btn-dark" type="submit">Criar ServiÃ§o</button>
+        <button class="btn btn-dark" type="submit">Criar Serviço</button>
         <a href="index.html" class="btn btn-dark">Voltar</a>
       </div>
     </form>  
