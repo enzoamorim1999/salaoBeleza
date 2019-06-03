@@ -58,10 +58,8 @@
                 <form method="post">
                     <div class="form-row">
                         <div class="col-md-3 mb-3">
-                            <c:forEach items="${clientes}" var="clientes">
-                            <c:forEach>    
                             <label for="validationServer01">CPF</label>
-                            <input type="number" class="form-control" value="${clientes.getCpf()}" name="cpf" id="validationServer01" placeholder="Apenas números" required>
+                            <input type="number" class="form-control" value="" name="cpf" id="validationServer01" placeholder="Apenas números" required>
                         </div>
                         <div>
                             <form class="form-inline">
@@ -73,16 +71,10 @@
                         <div class="col-md-3 mb-3">
                             <label for="validationServer03">Nome</label>
                             <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid city.
-                            </div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="validationServer03">Telefone</label>
                             <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid city.
-                            </div>
                         </div
                     </div>
                     <div class="form-row">
