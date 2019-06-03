@@ -96,9 +96,9 @@
     </tr>
   </tbody>
 </table>
-<div>
-        <a href="novoAgendamento.html" class="btn btn-dark">Novo Agendamento</a>
-      </div>
+     <div>
+        <a href="<%= request.getContextPath() + "/novoAgendamento"%>" class="btn btn-dark">Novo Agendamento</a>
+        </div>
     </div>
     </div>
     <hr>

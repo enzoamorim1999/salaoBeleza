@@ -49,26 +49,20 @@
         </nav>
     </div>
     <main>
-        <div class="ls-box">
-            <table class="ls-table">
-                <%
-                                    ArrayList<Cliente> clientes = (ArrayList<Cliente>) request.getAttribute("clientes");
+    <div class="ls-box">
+        <table class="ls-table">
+            <%
+            ArrayList<Cliente> clientes = (ArrayList<Cliente>) request.getAttribute("clientes");
                 %>
                 <h1 class="ls-title-intro ">Agendamento</h1>
-
-                
                 <form method="post">
                     <div class="form-row">
                         <div class="col-md-3 mb-3">
                             <c:forEach items="${clientes}" var="clientes">
-                                
-                             <c:forEach>    
+                            <c:forEach>    
                             <label for="validationServer01">CPF</label>
                             <input type="number" class="form-control" value="${clientes.getCpf()}" name="cpf" id="validationServer01" placeholder="Apenas nÃºmeros" required>
-                           
-                            </div>
-                            
-                           
+                        </div>
                         <div>
                             <form class="form-inline">
                                 <button class="btn btn-outline-dark btn btn-outline-success my-sm-3"  type="submit">Buscar</button>
@@ -76,7 +70,6 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        
                         <div class="col-md-3 mb-3">
                             <label for="validationServer03">Nome</label>
                             <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
@@ -90,12 +83,11 @@
                             <div class="invalid-feedback">
                                 Please provide a valid city.
                             </div>
-                        </div>
-
+                        </div
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-3 mb-3">
-                            <label for="exampleFormControlSelect1">ServiÃ§o</label>
+                        <div class="form-group col-md-2 mb-2">
+                            <label for="exampleFormControlSelect1">Serviço</label>
                             <select class="form-control" id="exampleFormControlSelect1">
                                 <option>Batata</option>
                                 <option>Atum</option>
@@ -104,31 +96,47 @@
                                 <option>Heyyy</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-3 mb-3">
+                        <div class="form-group col-md-2 mb-2">
+                            <label for="exampleFormControlSelect1">Horário</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>09:00</option>
+                                <option>10:00</option>
+                                <option>11:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>15:00</option>
+                                <option>16:00</option>
+                                <option>17:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2 mb-3">
                             <label for="exampleFormControlSelect1">Data</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Batata</option>
-                                <option>Atum</option>
-                                <option>Olele</option>
-                                <option>Olala</option>
-                                <option>Heyyy</option>
-                            </select>
-                        </div>
+                            <form action="" class="ls-form ls-form-inline">
+                                <input type="hidden" name="status" value="">
+                                <label class="ls-label">
+                                  <div class="ls-prefix-group">
+                                    <span id="new_feature_custom_filter_2" data-ls-module="popover" data-content="Escolha o período desejado e clique em 'Filtrar'." data-target="#ls-popover-0"></span>
+                                    <input type="text" name="range_start" class="datepicker ls-daterange" placeholder="dd/mm/aaaa" id="datepicker1" data-ls-daterange="#datepicker2">
+                                    <a class="ls-label-text-prefix ls-ico-calendar" data-trigger-calendar="#datepicker1" href="#"></a>
+                                </div>
+                            </label>
+                        </form>
                     </div>
-
-                    <div>
-                        <button class="btn btn-dark" type="submit">Agendar</button>
-                        <a href="<%= request.getContextPath() + "/cadastroCliente"%>" class="btn btn-dark">Novo Usuário</a>
-                        <a href="<%= request.getContextPath() + "/listaAgendamentos"%>" class="btn btn-dark">Voltar</a>
-                    </div>
-                </form>  
+                </div>
+                <div>
+                    <button class="btn btn-dark" type="submit">Agendar</button>
+                    <a href="<%= request.getContextPath() + "/cadastroCliente"%>" class="btn btn-dark">Novo Usuário</a>
+                    <a href="<%= request.getContextPath() + "/listaAgendamentos"%>" class="btn btn-dark">Voltar</a>
+                </div>
+            </form>  
         </div>
-
     </div>
-
 </div>
 </main>
 
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://assets.locaweb.com.br/locastyle/3.10.1/javascripts/locastyle.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

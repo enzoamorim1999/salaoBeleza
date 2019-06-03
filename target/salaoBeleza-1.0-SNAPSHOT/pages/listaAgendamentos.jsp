@@ -112,9 +112,8 @@
 </table>
 
       <div>
-        <button class="btn btn-dark" type="submit">Novo Agendamento</button>
+          <a href="<%= request.getContextPath() + "/novoAgendamento"%>" class="btn btn-dark">Novo Agendamento</a>
           <a href="<%= request.getContextPath() + "/listaAgendamentos"%>" class="btn btn-dark">Voltar</a>
-        
       </div>
 
     </div>

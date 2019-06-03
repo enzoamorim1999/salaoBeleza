@@ -97,9 +97,8 @@
   </tbody>
 </table>
       <div>
-        <button class="btn btn-dark" type="submit">Criar Serviço</button>
-        <a href="<%= request.getContextPath() + "/listaServicos"%>" class="btn btn-dark">Voltar</a>
-      </div>
+        <a href="<%= request.getContextPath() + "/novoAgendamento"%>" class="btn btn-dark">Novo Agendamento</a>
+        </div>
     </div>
     </div>
     <hr>
