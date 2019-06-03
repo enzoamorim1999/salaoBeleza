@@ -28,16 +28,16 @@
             <div class="bg-dark p-4">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="index.html">Home</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="pages/index.jsp">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaAgendamentos.html">Agendamentos</a>
+                      <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">ServiÁos</a>
+                      <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos" %>">Servi√ßos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
+                      <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes" %>">Clientes</a>
                     </li>
                 </ul>
             </div>
@@ -46,9 +46,6 @@
             <button class="navbar-toggler justify-content-center" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div>
-                <a href="cadastroCliente.html" class="btn btn-outline-secondary">Sair</a>
-            </div>
         </nav>
     </div>
     <main>
@@ -121,8 +118,8 @@
 
                     <div>
                         <button class="btn btn-dark" type="submit">Agendar</button>
-                        <a href="cadastroCliente.html" class="btn btn-dark">Novo Usu√°rio</a>
-                        <a href="index.html" class="btn btn-dark">Voltar</a>
+                        <a href="<%= request.getContextPath() + "/cadastroCliente"%>" class="btn btn-dark">Novo Usu·rio</a>
+                        <a href="<%= request.getContextPath() + "/listaAgendamentos"%>" class="btn btn-dark">Voltar</a>
                     </div>
                 </form>  
         </div>

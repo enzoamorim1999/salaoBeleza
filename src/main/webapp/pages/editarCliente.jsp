@@ -28,28 +28,25 @@
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaAgendamentos.html">Agendamentos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
-                    </li>
-                </ul>
+        <li class="nav-item">
+            <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="pages/index.jsp">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos" %>">ServiÃ§os</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes" %>">Clientes</a>
+        </li>
+      </ul>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
     <button class="navbar-toggler justify-content-center" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-      <div>
-        <a href="cadastroCliente.html" class="btn btn-outline-secondary">Sair</a>
-      </div>
   </nav>
   </div>
 <main>
@@ -62,23 +59,14 @@
         <div class="col-md-3 mb-3">
           <label for="validationServer01">Nome</label>
           <input type="text" class="form-control" name="nome" value="${cliente.getNome()}" id="validationServer01" placeholder="Primeiro nome" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
         </div>
         <div class="col-md-2 mb-3">
           <label for="validationServer02">CPF</label>
           <input type="text" class="form-control"  name="cpf" value="${cliente.getCpf()}" id="validationServer02" placeholder="00000000" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
         </div>
         <div class="col-md-2 mb-3">
           <label for="validationServer02">Telefone</label>
           <input type="text" class="form-control" name="telefone" value="${cliente.getTelefone()}" id="validationServer02" placeholder="00000000" required>
-          <di v class="valid-feedback">
-            Looks good!
-          </div>
         </div>
       </div>
       
@@ -86,21 +74,15 @@
         <div class="col-md-3 mb-3">
           <label for="validationServer03">Cidade</label>
           <input type="text" class="form-control" name="cidade" value="${cliente.getCidade()}" id="validationServer03" placeholder="Sampa" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
         </div>
         <div class="col-md-1 mb-3">
           <label for="validationServer03">Estado</label>
           <input type="text" class="form-control" name="estado" value="${cliente.getEstado()}" id="validationServer03" placeholder="Sampa" required>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
         </div>
       </div>
       <div>
         <button class="btn btn-dark" type="submit">Salvar</button>
-        <a href="index.html" class="btn btn-dark">Voltar</a>
+        <a href="<%= request.getContextPath() + "/listaClientes"%>" class="btn btn-dark">Voltar</a>
       </div>
     </form>  
 </div>

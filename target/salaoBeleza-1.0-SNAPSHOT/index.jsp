@@ -1,16 +1,12 @@
-<%-- 
-    Document   : editarCliente
-    Created on : 23/05/2019, 23/05/2019
+<%--
+    Document   : cadastroServico
+    Created on : 23/05/2019,13:00:15
     Author     : davi.msantos7
 --%>
-
-<%@page import="com.poo.davi.enzo.salaobeleza.Model.Cliente"%>
-<%@page import="java.util.ArrayList"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
 <head>
-  <title>Editar Clientes</title>
+  <title>Home</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
   <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="form-validation.css" rel="stylesheet">
@@ -24,7 +20,7 @@
   <link rel="icon" sizes="192x192" href="/locawebstyle/assets/images/ico-boilerplate.png">
   <link rel="apple-touch-icon" href="/locawebstyle/assets/images/ico-boilerplate.png">
 </head>
-    <div class="pos-f-t">
+  <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <ul class="nav justify-content-center">
@@ -35,7 +31,7 @@
           <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos" %>">Serviços</a>
+          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos" %>">Servi�os</a>
         </li>
         <li class="nav-item">
           <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes" %>">Clientes</a>
@@ -49,51 +45,68 @@
     </button>
   </nav>
   </div>
-<main>
-    <div class="ls-box">
+  <main role="main">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4">Bem vindo</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="ls-box">
     <table class="ls-table">
-<h1 class="ls-title-intro ">Editar Clientes</h1>
-<form method="POST">
-    <% Cliente cliente = (Cliente) request.getAttribute("clientes");%>
-      <div class="form-row">
-        <div class="col-md-3 mb-3">
-          <label for="validationServer01">Nome</label>
-          <input type="text" class="form-control" name="nome" value="${cliente.getNome()}" id="validationServer01" placeholder="Primeiro nome" required>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="validationServer02">CPF</label>
-          <input type="text" class="form-control"  name="cpf" value="${cliente.getCpf()}" id="validationServer02" placeholder="00000000" required>
-        </div>
-        <div class="col-md-2 mb-3">
-          <label for="validationServer02">Telefone</label>
-          <input type="text" class="form-control" name="telefone" value="${cliente.getTelefone()}" id="validationServer02" placeholder="00000000" required>
-        </div>
-      </div>
-      
-      <div class="form-row">
-        <div class="col-md-3 mb-3">
-          <label for="validationServer03">Cidade</label>
-          <input type="text" class="form-control" name="cidade" value="${cliente.getCidade()}" id="validationServer03" placeholder="Sampa" required>
-        </div>
-        <div class="col-md-1 mb-3">
-          <label for="validationServer03">Estado</label>
-          <input type="text" class="form-control" name="estado" value="${cliente.getEstado()}" id="validationServer03" placeholder="Sampa" required>
-        </div>
+      <div class="col-md-5 mb-3">
+        <h1 class="ls-title-intro ">Agendamentos do Dia</h1>
       </div>
       <div>
-        <button class="btn btn-dark" type="submit">Salvar</button>
-        <a href="<%= request.getContextPath() + "/listaClientes"%>" class="btn btn-dark">Voltar</a>
+      <form class="form-inline col-md-4 mb-3">
+        <input type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Buscar</button>
+      </form>
+    </div>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th class="hidden-xs">CPF</th>
+      <th>Serviço</th>
+      <th class="hidden-xs">Horário</th>
+      <th> Valor</th>
+      <th class="hidden-xs">Telefone</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Carla Santos</td>
+      <td class="hidden-xs">12345678900</td>
+      <td>Progressiva</td>
+      <td class="hidden-xs">08:00</td>
+      <td>R$ 130,00</td>
+      <td class="hidden-xs">11 95151-5252</td>
+      <td>Efetuado</td>
+    </tr>
+    <tr>
+      <td>Giulia Valentina</td>
+      <td class="hidden-xs">98765432100</td>
+      <td>Chapinha</td>
+      <td class="hidden-xs">15:00</td>
+      <td>R$ 30,00</td>
+      <td class="hidden-xs">12 95353-5454</td>
+      <td>Cancelado</td
+    </tr>
+  </tbody>
+</table>
+<div>
+        <a href="novoAgendamento.html" class="btn btn-dark">Novo Agendamento</a>
       </div>
-    </form>  
-</div>
-</div>
-
-</div>
-</main>
+    </div>
+    </div>
+    <hr>
+  </div> <!-- /container -->
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-
