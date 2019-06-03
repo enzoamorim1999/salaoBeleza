@@ -6,7 +6,6 @@
 package com.poo.davi.enzo.salaobelezaServelets;
 
 import com.poo.davi.enzo.salaobeleza.Controllers.ServicoController;
-import com.poo.davi.enzo.salaobeleza.Model.Servico;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -20,33 +19,23 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Casa
  */
-@WebServlet(name = "cadastroServico", urlPatterns = {"/cadastroServico"})
-public class cadastroServico extends HttpServlet {
+@WebServlet(name = "excluirServico", urlPatterns = {"/excluirServico"})
+public class excluirServico extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-         RequestDispatcher dispatcher
-                = request.getRequestDispatcher("/pages/cadastroServico.jsp");
+         request.setAttribute("excluido", ServicoController.excluir(Integer.parseInt(request.getParameter("id"))));
+        RequestDispatcher dispatcher
+                = request.getRequestDispatcher("/listaServicos");
         dispatcher.forward(request, response);
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        Servico serv = new Servico(request.getParameter("nome"),
-                Integer.parseInt(request.getParameter("preco")));
-        
-        
-        
-       if (ServicoController.salvar(serv)) {
-            response.sendRedirect(request.getContextPath() + "/listaServicos?salvo=true");
-        } else {
-            request.setAttribute("salvo", "false");
-            response.sendRedirect(request.getContextPath() + "/listaServicos?salvo=false");
-        }
 
     }
 

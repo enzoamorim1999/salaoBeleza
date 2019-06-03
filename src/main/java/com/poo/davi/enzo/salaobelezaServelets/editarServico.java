@@ -20,32 +20,38 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Casa
  */
-@WebServlet(name = "cadastroServico", urlPatterns = {"/cadastroServico"})
-public class cadastroServico extends HttpServlet {
+@WebServlet(name = "editarServico", urlPatterns = {"/editarServico"})
+public class editarServico extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+         request.setAttribute("servicos", ServicoController.buscaPorId(Integer.parseInt(request.getParameter("id"))));
+        
          RequestDispatcher dispatcher
-                = request.getRequestDispatcher("/pages/cadastroServico.jsp");
+                = request.getRequestDispatcher("/pages/editarServico.jsp");
         dispatcher.forward(request, response);
+        
+        
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        Servico serv = new Servico(request.getParameter("nome"),
+        Servico cliente = new Servico(request.getParameter("nome"),
                 Integer.parseInt(request.getParameter("preco")));
         
         
-        
-       if (ServicoController.salvar(serv)) {
-            response.sendRedirect(request.getContextPath() + "/listaServicos?salvo=true");
+        cliente.setId(Integer.parseInt(request.getParameter("id")));
+        if (ServicoController.atualizar(cliente)) {
+            response.sendRedirect(request.getContextPath() + "/listaServicos?editado=true");
         } else {
+            //response.sendRedirect(request.getContextPath() + "/editarUsuario?editado=false");
             request.setAttribute("salvo", "false");
-            response.sendRedirect(request.getContextPath() + "/listaServicos?salvo=false");
+            response.sendRedirect(request.getContextPath() + "/editarServico?id=" + cliente.getId() + "&editado=false");
         }
 
     }

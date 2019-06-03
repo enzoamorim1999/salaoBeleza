@@ -24,5 +24,23 @@ public class ServicoController {
     public static ArrayList<Servico> listaServicos() {
         return ServicoDAO.listaServicos();
     }
+    
+    public static Servico buscaPorId(int id) {
+       
+        return ServicoDAO.buscaPorId(id);
+        
+    }
+    
+    public static boolean atualizar(Servico servico) {
+
+        return ServicoDAO.atualizar(servico);
+
+    }
+    
+    public static boolean excluir(int id) {
+
+        return ServicoDAO.excluir(id);
+
+    }
 
 }

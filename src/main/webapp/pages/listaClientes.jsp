@@ -45,10 +45,10 @@
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaAgendamentos.html">Agendamentos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaServicos.html">ServiÃ§os</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaClientes.html">Clientes</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
                     </li>
                 </ul>
             </div>
@@ -115,8 +115,8 @@
         </table>
 
         <div>
-            <a href="<%= request.getContextPath() + "/cadastroCliente"%>" class="ls-btn-primary ls-ico-user ls-btn-lg">Adicionar usuário</a>
-            <a href="index.html" class="btn btn-dark">Voltar</a>
+            <a href="<%= request.getContextPath() + "/cadastroCliente"%>" class="btn btn-dark">Adicionar usuário</a>
+            <a href="<%= request.getContextPath() + "/listaClientes"%>" class="btn btn-dark">Voltar</a>
         </div>
 
     </div>

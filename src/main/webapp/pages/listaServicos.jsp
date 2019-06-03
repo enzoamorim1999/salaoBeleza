@@ -26,10 +26,10 @@
         <script>
             function confirme(id) {
                 var txt;
-                var r = confirm("Deseja realmente excluir o funcionÃ¡rio?");
+                var r = confirm("Deseja realmente excluir o serviço ?");
                 if (r == true) {
                     console.log(id);
-                    window.location.href = window.location.origin + "/***/excluirUsuario?id=" + id;
+                    window.location.href = window.location.origin + "/salaoBeleza/excluirServico?id=" + id;
                 }
             }
         </script>
@@ -45,10 +45,10 @@
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaAgendamentos.html">Agendamentos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaServicos.html">ServiÃ§os</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaClientes.html">Clientes</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
                     </li>
                 </ul>
             </div>
@@ -83,8 +83,8 @@
                         <td>${servicos.getPreco()}</td>
                         <td>
                             <div>
-                                <a href="<%= request.getContextPath() + "/editarUsuario?id="%>${usuario.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
-                                <a href="" onclick="confirme(${usuario.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
+                                <a href="<%= request.getContextPath() + "/editarServico?id="%>${servicos.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
+                                <a href="" onclick="confirme(${servicos.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
                             </div>
                         </td>
                     </tr>

@@ -1,16 +1,18 @@
-<%--
-    Document   : listaAgendamentos
-    Created on : 23/05/2019, 13:02:45
-    Author     : DaviMarques
+<%-- 
+    Document   : cadastroServico
+    Created on : 23/05/2019,13:00:15 
+    Author     : Enzo Amorim
 --%>
 
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.poo.davi.enzo.salaobeleza.Model.Servico"%>
+<%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!doctype html>
 <html class="ls-theme-blue ls-window-lg ls-screen-lg ls-browser-chrome">
     <head>
-        <title>Lista de Serviços</title>
+        <title>Editar Serviços</title>
         <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
         <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="form-validation.css" rel="stylesheet">
@@ -23,16 +25,6 @@
         <link href="http://assets.locaweb.com.br/locastyle/3.10.1/stylesheets/locastyle.css" rel="stylesheet" type="text/css">
         <link rel="icon" sizes="192x192" href="/locawebstyle/assets/images/ico-boilerplate.png">
         <link rel="apple-touch-icon" href="/locawebstyle/assets/images/ico-boilerplate.png">
-        <script>
-            function confirme(id) {
-                var txt;
-                var r = confirm("Deseja realmente excluir o serviço ?");
-                if (r == true) {
-                    console.log(id);
-                    window.location.href = window.location.origin + "/salaoBeleza/excluirServico?id=" + id;
-                }
-            }
-        </script>
     </head>
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
@@ -62,47 +54,43 @@
             </div>
         </nav>
     </div>
-    <div class="ls-box">
-        <table class="ls-table">
-            <h1 class="ls-title-intro ">Serviços</h1>
-            <thead><%
-                ArrayList<Servico> servicos = (ArrayList<Servico>) request.getAttribute("servicos");
-                %>
-                <tr>
-                    <th>ID</th>
-                    <th class="hidden-xs">Nome do Serviço</th>
-                    <th>Valor</th>
-                    <th> </th>
-                </tr>
-            </thead>
-            <tbody>
-                <c:forEach items="${servicos}" var="servicos">
-                    <tr>
-                        <td>${servicos.getId()}</td>
-                        <td class="hidden-xs">${servicos.getNome()}</td>
-                        <td>${servicos.getPreco()}</td>
-                        <td>
-                            <div>
-                                <a href="<%= request.getContextPath() + "/editarServico?id="%>${servicos.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
-                                <a href="" onclick="confirme(${servicos.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
+    <main>
+        <div class="ls-box">
+            <table class="ls-table">
+                <h1 class="ls-title-intro ">Editar Serviços</h1>
+                <form method="POST">
+                    <% Servico servicos = (Servico) request.getAttribute("servicos");%>
+                    <div class="form-row">
+                        <div class="col-md-3 mb-3">
+                            <label for="validationServer01">Nome</label>
+                            <input type="text" class="form-control"  value="${servicos.getNome()}" name="nome" id="validationServer01" placeholder="Corte de cabelo" required>
+                            <div class="valid-feedback">
+                                Looks good!
                             </div>
-                        </td>
-                    </tr>
-
-                </c:forEach>
-            </tbody>
-        </table>
-
-        <div>
-            <a href="<%= request.getContextPath() + "/cadastroServico"%>"  class="btn btn-dark" >Adicionar serviços</a>
-            <a href="index.html"class="btn btn-dark"  >Voltar</a>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3 mb-3">
+                            <label for="validationServer03">Preço</label>
+                            <input type="number" class="form-control" value="${servicos.getPreco()}" name="preco" id="validationServer03" placeholder="R$" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn btn-dark" type="submit">Salvar</button>
+                        <a href="index.html" class="btn btn-dark">Voltar</a>
+                    </div>
+                </form>  
         </div>
-
     </div>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://assets.locaweb.com.br/locastyle/3.10.1/javascripts/locastyle.js" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -53,10 +53,10 @@ public class cadastroCliente extends HttpServlet {
         
         
        if (UsuarioController.salvar(cliente)) {
-            response.sendRedirect(request.getContextPath() + "/cadastroCliente?salvo=true");
+            response.sendRedirect(request.getContextPath() + "/listaClientes?salvo=true");
         } else {
             request.setAttribute("salvo", "false");
-            response.sendRedirect(request.getContextPath() + "/cadastroProduto?salvo=false");
+            response.sendRedirect(request.getContextPath() + "/listaClientes?salvo=false");
         }
         
         

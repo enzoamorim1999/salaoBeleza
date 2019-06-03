@@ -25,19 +25,19 @@
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaAgendamentos.html">Agendamentos</a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaServicos.html">ServiÃ§os</a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaClientes.html">Clientes</a>
-        </li>
-      </ul>
+                    <li class="nav-item">
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="listaAgendamentos.html">Agendamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
+                    </li>
+                </ul>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
@@ -96,7 +96,7 @@
       </div>
       <div>
         <button class="btn btn-dark" type="submit">Criar Usuario</button>
-        <a href="index.html" class="btn btn-dark">Voltar</a>
+        <a href="<%= request.getContextPath() + "/listaClientes"%>" class="btn btn-dark">Voltar</a>
       </div>
     </form>  
 </div>

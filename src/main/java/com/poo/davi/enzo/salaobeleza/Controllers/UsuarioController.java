@@ -42,5 +42,11 @@ public class UsuarioController {
         return UsuarioDAO.excluir(id);
 
     }
+    
+    public static Cliente buscaPorCpf(String cpf) {
+       
+        return UsuarioDAO.buscaPorCpf(cpf);
+        
+    }
 
 }

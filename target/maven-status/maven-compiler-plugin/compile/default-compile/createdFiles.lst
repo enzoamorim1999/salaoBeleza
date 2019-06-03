@@ -4,12 +4,15 @@ com\poo\davi\enzo\salaobeleza\Connection\conectaBanco.class
 com\poo\davi\enzo\salaobeleza\Model\Servico.class
 com\poo\davi\enzo\salaobeleza\DAO\UsuarioDAO.class
 com\poo\davi\enzo\salaobeleza\Controllers\ServicoController.class
+com\poo\davi\enzo\salaobelezaServelets\excluirServico.class
 com\poo\davi\enzo\salaobeleza\Model\Cliente.class
 com\poo\davi\enzo\salaobelezaServelets\cadastroCliente.class
 com\poo\davi\enzo\salaobelezaServelets\listaServicos.class
 com\poo\davi\enzo\salaobelezaServelets\excluirCliente.class
 com\poo\davi\enzo\salaobeleza\DAO\ServicoDAO.class
 com\poo\davi\enzo\salaobelezaServelets\listaClientes.class
+com\poo\davi\enzo\salaobelezaServelets\editarServico.class
 com\poo\davi\enzo\salaobeleza\Controllers\AgendamentoController.class
 com\poo\davi\enzo\salaobeleza\DAO\AgendamentoDAO.class
 com\poo\davi\enzo\salaobeleza\Controllers\UsuarioController.class
+com\poo\davi\enzo\salaobelezaServelets\cadastroServico.class

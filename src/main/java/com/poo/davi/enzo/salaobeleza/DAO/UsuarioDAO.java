@@ -151,5 +151,29 @@ public class UsuarioDAO {
         }
         return cli;
     }
+    
+    
+    public static Cliente buscaPorCpf(String cpf) {
+        Cliente cli = new Cliente();
+        try {
+            Connection conexao = conectaBanco.conectaDB();
+            PreparedStatement comando = conexao.prepareStatement("SELECT * FROM usuarios WHERE cpf=?");
+            comando.setString(1, cpf);
+
+            ResultSet rs = comando.executeQuery();
+            //System.out.println(comando);
+            while (rs.next()) {
+
+                cli = new Cliente(rs.getString("nome"), rs.getInt("cpf"), rs.getInt("telefone"),
+                        rs.getString("cidade"), rs.getString("estado"));
+                cli.setId(rs.getInt("id"));
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cli;
+    }
 
 }
