@@ -5,7 +5,9 @@
  */
 package com.poo.davi.enzo.salaobelezaServelets;
 
+import com.poo.davi.enzo.salaobeleza.Controllers.AgendamentoController;
 import com.poo.davi.enzo.salaobeleza.Controllers.UsuarioController;
+import com.poo.davi.enzo.salaobeleza.Model.Agendamento;
 import com.poo.davi.enzo.salaobeleza.Model.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -28,8 +30,8 @@ public class listaAgendamentos extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        ArrayList<Cliente> listaAgendamentos = UsuarioController.listaUsuarios();
-       request.setAttribute("agendamentos", listaAgendamentos );
+        ArrayList<Agendamento> listaAgenda = AgendamentoController.listaAgenda();
+       request.setAttribute("agenda", listaAgenda );
         
         
         RequestDispatcher dispatcher

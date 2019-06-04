@@ -5,10 +5,24 @@
  */
 package com.poo.davi.enzo.salaobeleza.Controllers;
 
+import com.poo.davi.enzo.salaobeleza.DAO.AgendamentoDAO;
+import com.poo.davi.enzo.salaobeleza.Model.Agendamento;
+import java.util.ArrayList;
+
 /**
  *
  * @author Casa
  */
 public class AgendamentoController {
-    
+
+    public static boolean salvar(Agendamento agenda) {
+
+        return AgendamentoDAO.salvar(agenda);
+
+    }
+
+    public static ArrayList<Agendamento> listaAgenda() {
+        return AgendamentoDAO.listaAgenda();
+    }
+
 }
