@@ -42,7 +42,7 @@ public class UsuarioDAO {
                     + "?)");
 
             comando.setString(1, usuario.getNome());
-            comando.setInt(2, usuario.getCpf());
+            comando.setString(2, usuario.getCpf());
             comando.setInt(3, usuario.getTelefone());
             comando.setString(4, usuario.getCidade());
             comando.setString(5, usuario.getEstado());
@@ -87,7 +87,7 @@ public class UsuarioDAO {
 
             while (rs.next()) {
 
-                Cliente cli = new Cliente(rs.getString("nome"), rs.getInt("cpf"),
+                Cliente cli = new Cliente(rs.getString("nome"), rs.getString("cpf"),
                         rs.getInt("telefone"), rs.getString("cidade"), rs.getString("estado"));
                 cli.setId(rs.getInt("id"));
 
@@ -113,7 +113,7 @@ public class UsuarioDAO {
                     + " WHERE id = ?");
 
             comando.setString(1, cliente.getNome());
-            comando.setInt(2, cliente.getCpf());
+            comando.setString(2, cliente.getCpf());
             comando.setInt(3, cliente.getTelefone());
             comando.setString(4, cliente.getCidade());
             comando.setString(5, cliente.getEstado());
@@ -140,7 +140,7 @@ public class UsuarioDAO {
             //System.out.println(comando);
             while (rs.next()) {
 
-                cli = new Cliente(rs.getString("nome"), rs.getInt("cpf"), rs.getInt("telefone"),
+                cli = new Cliente(rs.getString("nome"), rs.getString("cpf"), rs.getInt("telefone"),
                         rs.getString("cidade"), rs.getString("estado"));
                 cli.setId(rs.getInt("id"));
 
@@ -164,9 +164,8 @@ public class UsuarioDAO {
             //System.out.println(comando);
             while (rs.next()) {
 
-                cli = new Cliente(rs.getString("nome"), rs.getInt("cpf"), rs.getInt("telefone"),
-                        rs.getString("cidade"), rs.getString("estado"));
-                cli.setId(rs.getInt("id"));
+                cli = new Cliente(rs.getString("nome"), rs.getInt("telefone"));
+                System.out.println(cli);
 
             }
 

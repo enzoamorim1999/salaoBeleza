@@ -27,8 +27,8 @@ public class novoAgendamento extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ArrayList<Cliente> listaClientes = UsuarioController.listaUsuarios();
-        request.setAttribute("clientes", listaClientes);
+      
+
         RequestDispatcher dispatcher
                 = request.getRequestDispatcher("/pages/novoAgendamento.jsp");
         dispatcher.forward(request, response);
@@ -37,6 +37,17 @@ public class novoAgendamento extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
+        
+        request.setAttribute("nomeCliente", UsuarioController.buscaPorCpf((request.getParameter("cpf"))));
+        
+       
+        
+        RequestDispatcher dispatcher
+                = request.getRequestDispatcher("/pages/novoAgendamento.jsp");
+        dispatcher.forward(request, response);
+       
+        
 
     }
 

@@ -45,7 +45,7 @@ public class cadastroCliente extends HttpServlet {
             throws ServletException, IOException {
 
         Cliente cliente = new Cliente(request.getParameter("nome"),
-                Integer.parseInt(request.getParameter("cpf")),
+               request.getParameter("cpf"),
                 Integer.parseInt(request.getParameter("telefone")),
                 request.getParameter("cidade"),
                 request.getParameter("estado"));

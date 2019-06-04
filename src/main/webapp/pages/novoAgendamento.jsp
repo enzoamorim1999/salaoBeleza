@@ -31,13 +31,13 @@
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="pages/index.jsp">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
                     </li>
                     <li class="nav-item">
-                      <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos" %>">Servi√ßos</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">Servi√ßos</a>
                     </li>
                     <li class="nav-item">
-                      <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes" %>">Clientes</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
                     </li>
                 </ul>
             </div>
@@ -49,32 +49,35 @@
         </nav>
     </div>
     <main>
-    <div class="ls-box">
-        <table class="ls-table">
-            <%
-            ArrayList<Cliente> clientes = (ArrayList<Cliente>) request.getAttribute("clientes");
-                %>
+        <div class="ls-box">
+            <table class="ls-table">
+                
                 <h1 class="ls-title-intro ">Agendamento</h1>
                 <form method="post">
+
                     <div class="form-row">
                         <div class="col-md-3 mb-3">
                             <label for="validationServer01">CPF</label>
                             <input type="number" class="form-control" value="" name="cpf" id="validationServer01" placeholder="Apenas n√∫meros" required>
                         </div>
                         <div>
-                            <form class="form-inline">
-                                <button class="btn btn-outline-dark btn btn-outline-success my-sm-3"  type="submit">Buscar</button>
-                            </form>
+
+                            <button class="btn btn-outline-dark btn btn-outline-success my-sm-3"  type="submit">Buscar</button>
+
                         </div>
                     </div>
+                </form>
+                <form method="POST">
+                    <% Cliente nomeCliente = (Cliente) request.getAttribute("nomeCliente");%>
                     <div class="form-row">
                         <div class="col-md-3 mb-3">
                             <label for="validationServer03">Nome</label>
-                            <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
+                            
+                            <input type="text" class="form-control" value="${nomeCliente.getNome()}" id="validationServer03" placeholder="Sampa" required>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="validationServer03">Telefone</label>
-                            <input type="text" class="form-control" id="validationServer03" placeholder="Sampa" required>
+                            <input type="text" class="form-control" value="${nomeCliente.getTelefone()} " id="validationServer03" placeholder="Sampa" required>
                         </div
                     </div>
                     <div class="form-row">
@@ -103,24 +106,24 @@
                         </div>
                         <div class="form-group col-md-2 mb-3">
                             <label for="exampleFormControlSelect1">Data</label>
-                            <form action="" class="ls-form ls-form-inline">
-                                <input type="hidden" name="status" value="">
-                                <label class="ls-label">
-                                  <div class="ls-prefix-group">
+
+                            <input type="hidden" name="status" value="">
+                            <label class="ls-label">
+                                <div class="ls-prefix-group">
                                     <span id="new_feature_custom_filter_2" data-ls-module="popover" data-content="Escolha o perÌodo desejado e clique em 'Filtrar'." data-target="#ls-popover-0"></span>
                                     <input type="text" name="range_start" class="datepicker ls-daterange" placeholder="dd/mm/aaaa" id="datepicker1" data-ls-daterange="#datepicker2">
                                     <a class="ls-label-text-prefix ls-ico-calendar" data-trigger-calendar="#datepicker1" href="#"></a>
                                 </div>
                             </label>
-                        </form>
+
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <button class="btn btn-dark" type="submit">Agendar</button>
-                    <a href="<%= request.getContextPath() + "/cadastroCliente"%>" class="btn btn-dark">Novo Usu·rio</a>
-                    <a href="<%= request.getContextPath() + "/listaAgendamentos"%>" class="btn btn-dark">Voltar</a>
-                </div>
-            </form>  
+                    <div>
+                        <button class="btn btn-dark" type="submit">Agendar</button>
+                        <a href="<%= request.getContextPath() + "/cadastroCliente"%>" class="btn btn-dark">Novo Usu·rio</a>
+                        <a href="<%= request.getContextPath() + "/listaAgendamentos"%>" class="btn btn-dark">Voltar</a>
+                    </div>
+                </form>  
         </div>
     </div>
 </div>

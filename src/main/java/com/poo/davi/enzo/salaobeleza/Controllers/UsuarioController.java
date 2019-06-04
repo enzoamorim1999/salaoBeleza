@@ -45,8 +45,12 @@ public class UsuarioController {
     
     public static Cliente buscaPorCpf(String cpf) {
        
+        System.out.println("estou na controller" +cpf);
+        
         return UsuarioDAO.buscaPorCpf(cpf);
         
     }
+
+    
 
 }

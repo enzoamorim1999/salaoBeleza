@@ -13,12 +13,12 @@ public class Cliente {
 
     private int id;
     private String nome;
-    private int cpf;
+    private String cpf;
     private int telefone;
     private String cidade;
     private String estado;
 
-    public Cliente(String nome, int cpf, int telefone, String cidade, String estado) {
+    public Cliente(String nome, String cpf, int telefone, String cidade, String estado) {
 
         this.nome = nome;
         this.cpf = cpf;
@@ -26,12 +26,17 @@ public class Cliente {
         this.cidade = cidade;
         this.estado = estado;
     }
-    
-    public Cliente(){
-    
+
+    public Cliente(String nome, int telefone) {
+        this.nome = nome;
+        this.telefone = telefone;
+        
     }
-    
-    
+
+    public Cliente() {
+
+    }
+
     public int getId() {
         return id;
     }
@@ -48,15 +53,6 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public int getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
-    }
-
-   
     public int getTelefone() {
         return telefone;
     }
@@ -77,10 +73,16 @@ public class Cliente {
         return estado;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-    
 
 }
