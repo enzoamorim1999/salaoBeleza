@@ -87,7 +87,7 @@ public class AgendamentoDAO {
         try {
 
             Connection conexao = conectaBanco.conectaDB();
-            PreparedStatement comando = conexao.prepareStatement("SELECT * FROM agendamento WHERE data = " + data + " order by horario");
+            PreparedStatement comando = conexao.prepareStatement("SELECT * FROM agendamento WHERE data = '" + data + "' order by horario");
 
             ResultSet rs = comando.executeQuery();
 
