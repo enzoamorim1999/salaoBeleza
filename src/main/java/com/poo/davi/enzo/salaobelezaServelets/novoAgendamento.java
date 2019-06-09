@@ -32,12 +32,6 @@ public class novoAgendamento extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        ArrayList<Servico> listaServicos = ServicoController.listaServicos();
-       request.setAttribute("servicos", listaServicos );
-       
-        
-        
-        
         RequestDispatcher dispatcher
                 = request.getRequestDispatcher("/pages/novoAgendamento.jsp");
         dispatcher.forward(request, response);
@@ -49,6 +43,9 @@ public class novoAgendamento extends HttpServlet {
 
         request.setAttribute("nomeCliente", UsuarioController.buscaPorCpf((request.getParameter("cpf"))));
 
+        ArrayList<Servico> listaServico = ServicoController.listaServicos();
+        request.setAttribute("servicos", listaServico);
+
         RequestDispatcher dispatcher
                 = request.getRequestDispatcher("/pages/novoAgendamento.jsp");
         dispatcher.forward(request, response);
@@ -58,7 +55,10 @@ public class novoAgendamento extends HttpServlet {
                 request.getParameter("horario"),
                 request.getParameter("data"));
 
-        AgendamentoController.salvar(agenda);
+        if (AgendamentoController.salvar(agenda) == true) {
+
+            response.sendRedirect("pages/listaAgendamentos.jsp");
+        }
 
     }
 

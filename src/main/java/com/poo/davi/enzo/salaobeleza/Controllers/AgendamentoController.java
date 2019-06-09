@@ -24,5 +24,17 @@ public class AgendamentoController {
     public static ArrayList<Agendamento> listaAgenda() {
         return AgendamentoDAO.listaAgenda();
     }
+    
+    public static ArrayList<Agendamento> listaAgendaPorData(String data) {
+        System.out.println("estou na lista DATA "+data);
+        return AgendamentoDAO.listaAgendaPorData(data);
+    }
+    
+    public static boolean excluir(int id) {
+
+        return AgendamentoDAO.excluir(id);
+
+    }
+
 
 }

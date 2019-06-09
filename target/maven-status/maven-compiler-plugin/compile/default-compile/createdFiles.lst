@@ -1,6 +1,7 @@
 com\poo\davi\enzo\salaobeleza\Model\Agendamento.class
 com\poo\davi\enzo\salaobelezaServelets\editarCliente.class
 com\poo\davi\enzo\salaobeleza\Connection\conectaBanco.class
+index.class
 com\poo\davi\enzo\salaobeleza\Model\Servico.class
 com\poo\davi\enzo\salaobelezaServelets\listaAgendamentos.class
 com\poo\davi\enzo\salaobeleza\DAO\UsuarioDAO.class
@@ -14,6 +15,7 @@ com\poo\davi\enzo\salaobeleza\DAO\ServicoDAO.class
 com\poo\davi\enzo\salaobelezaServelets\novoAgendamento.class
 com\poo\davi\enzo\salaobelezaServelets\listaClientes.class
 com\poo\davi\enzo\salaobelezaServelets\editarServico.class
+com\poo\davi\enzo\salaobelezaServelets\excluirAgendamento.class
 com\poo\davi\enzo\salaobeleza\Controllers\AgendamentoController.class
 com\poo\davi\enzo\salaobeleza\DAO\AgendamentoDAO.class
 com\poo\davi\enzo\salaobeleza\Controllers\UsuarioController.class

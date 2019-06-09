@@ -80,4 +80,47 @@ public class AgendamentoDAO {
         return listaAgenda;
     }
 
+    public static ArrayList<Agendamento> listaAgendaPorData(String data) {
+        ArrayList<Agendamento> listaAgendaPorData;
+
+        listaAgendaPorData = new ArrayList<Agendamento>();
+        try {
+
+            Connection conexao = conectaBanco.conectaDB();
+            PreparedStatement comando = conexao.prepareStatement("SELECT * FROM agendamento WHERE data = " + data + " order by horario");
+
+            ResultSet rs = comando.executeQuery();
+
+            System.out.println(comando);
+
+            while (rs.next()) {
+
+                Agendamento agenda = new Agendamento(rs.getString("nome"), rs.getString("servico"),
+                        rs.getString("horario"), rs.getString("data"));
+                agenda.setId(rs.getInt("id"));
+
+                listaAgendaPorData.add(agenda);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listaAgendaPorData;
+    }
+
+    public static boolean excluir(int id) {
+        try {
+
+            Connection conexao = conectaBanco.conectaDB();
+            PreparedStatement comando = conexao.prepareStatement("DELETE FROM agendamento WHERE id = ?");
+
+            comando.setInt(1, id);
+
+            int linhasAfetadas = comando.executeUpdate();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(AgendamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
 }

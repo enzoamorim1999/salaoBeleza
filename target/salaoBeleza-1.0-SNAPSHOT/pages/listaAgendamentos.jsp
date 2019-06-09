@@ -25,10 +25,10 @@
         <script>
             function confirme(id) {
                 var txt;
-                var r = confirm("Deseja realmente excluir o funcionário?");
+                var r = confirm("Deseja realmente excluir o agendamento ?");
                 if (r == true) {
                     console.log(id);
-                    window.location.href = window.location.origin + "/***/excluirUsuario?id=" + id;
+                    window.location.href = window.location.origin + "/salaoBeleza/excluirAgendamento?id=" + id;
                 }
             }
         </script>
@@ -60,7 +60,13 @@
     </div>
     <div class="ls-box">
         <table class="ls-table">
-            <h1 class="ls-title-intro ">Lista de Clientes</h1>
+            <h1 class="ls-title-intro ">Lista de Agendamentos</h1>
+            
+            <c:if test="${param.salvo == 'true'}">
+                <div class="ls-alert-success"><strong>Agendamento feito com sucesso !</strong></div>
+            </c:if>
+            
+            
             <thead>
 
                 <%
@@ -83,15 +89,10 @@
                         <th>${agenda.getData()}</th>
                         <th>${agenda.getHorario()}</th>
                         <td>
-                            <div>
-                                <a href="<%= request.getContextPath() + "/editarCliente?id="%>${clientes.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
 
-                            </div>
-                            <div data-ls-module="dropdown" class="ls-dropdown ls-pos-right">
-                                <a href="#" class="ls-btn ls-btn-sm" role="combobox" aria-expanded="false"></a>
-                                <ul class="ls-dropdown-nav" aria-hidden="true">
-                                    <li><a href="" onclick="confirme(${clientes.getId()})" class="ls-color-danger" role="option">Excluir</a></li>
-                                </ul>
+                            <div>
+
+                                <a href="" onclick="confirme(${agenda.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
                             </div>
                         </td>
                     </tr>

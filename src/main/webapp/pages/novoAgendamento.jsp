@@ -82,21 +82,24 @@
                         </div
                     </div>
 
+
+
                     <div class="form-row">
                         <div class="form-group col-md-2 mb-2">
                             <label for="exampleFormControlSelect1">Serviço</label>
 
 
+
                             <select class="form-control" name="servico" id="exampleFormControlSelect1">
-                                <option value="Corte de cabelo">Corte de cabelo</option>
-                                <option value="Mão">Mão</option>
-                                <option value="Pé">Pé</option>
-                                <option value="Sombrancelha">Sombrancelha</option>
+                                <c:forEach items="${servicos}" var="servicos"> 
+                                    <option value="${servicos.getNome()}">${servicos.getNome()}</option>
+                                </c:forEach> 
 
                             </select>
 
                         </div>
                     </div>
+
                     <div class="form-group col-md-2 mb-2">
                         <label for="exampleFormControlSelect1">Horário</label>
                         <select class="form-control" id="exampleFormControlSelect1" name="horario" >
