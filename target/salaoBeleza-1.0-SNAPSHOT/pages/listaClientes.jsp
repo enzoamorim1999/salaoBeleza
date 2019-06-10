@@ -25,8 +25,8 @@
         <script>
             function confirme(id) {
                 var txt;
-                
-                var r = confirm("Deseja realmente excluir o cliente ?"+id);
+
+                var r = confirm("Deseja realmente excluir o cliente ?" + id);
                 if (r == true) {
                     console.log(id);
                     window.location.href = window.location.origin + "/salaoBeleza/excluirCliente?id=" + id;
@@ -39,17 +39,17 @@
             <div class="bg-dark p-4">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                       <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="pages/index.jsp">Home</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="pages/index.jsp">Home</a>
                     </li>
-                   <li class="nav-item">
-                     <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
-                   </li>
-                   <li class="nav-item">
-                     <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos" %>">Serviços</a>
-                   </li>
-                   <li class="nav-item">
-                     <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes" %>">Clientes</a>
-                   </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -92,14 +92,9 @@
                         <td>
                             <div>
                                 <a href="<%= request.getContextPath() + "/editarCliente?id="%>${clientes.getId()}" class="btn btn-primary btn active" role="button" aria-pressed="true">Editar</a>
+                                <a href="" onclick="confirme(${clientes.getId()})" class="btn btn-danger btn active" role="button" aria-pressed="true">Excluir</a>
+                            </div>
 
-                            </div>
-                            <div data-ls-module="dropdown" class="ls-dropdown ls-pos-right">
-                                <a href="#" class="ls-btn ls-btn-sm" role="combobox" aria-expanded="false"></a>
-                                <ul class="ls-dropdown-nav" aria-hidden="true">
-                                    <li><a href="" onclick="confirme(${clientes.getId()})" class="ls-color-danger" role="option">Excluir</a></li>
-                                </ul>
-                            </div>
                         </td>
                     </tr>
                 </c:forEach>

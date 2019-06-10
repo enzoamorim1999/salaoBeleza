@@ -1,4 +1,4 @@
-<%--
+ <%--
     Document   : listaAgendamentos
     Created on : 23/05/2019, 13:02:45
     Author     : DaviMarques
@@ -35,7 +35,7 @@
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">ServiÃ§os</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">Servicos</a>
                     </li>
                     <li class="nav-item">
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
@@ -59,7 +59,7 @@
                     <div class="form-row">
                         <div class="col-md-3 mb-3">
                             <label for="validationServer01">CPF</label>
-                            <input type="number" class="form-control" value="" name="cpf" id="validationServer01" placeholder="Apenas nÃºmeros" required>
+                            <input type="number" class="form-control" value="" name="cpf" id="validationServer01" placeholder="Apenas numeros" required>
                         </div>
                         <div>
 
@@ -71,54 +71,44 @@
                 <form method="POST">
                     <% Cliente nomeCliente = (Cliente) request.getAttribute("nomeCliente");%>
                     <div class="form-row">
-                        <div class="col-md-3 mb-3">
+                        <div class="col-md-2 mb-3">
                             <label for="validationServer03">Nome</label>
 
-                            <input type="text" class="form-control" value="${nomeCliente.getNome()}"  name="nome" id="validationServer03" placeholder="Sampa" required>
+                            <input type="text" class="form-control" value="${nomeCliente.getNome()}"  name="nome" id="validationServer03" placeholder="Carlos Santos" required>
                         </div>
-                        <div class="col-md-3 mb-3">
+                        <div class="col-md-2 mb-3">
                             <label for="validationServer03">Telefone</label>
-                            <input type="text" class="form-control" value="${nomeCliente.getTelefone()} " id="validationServer03" placeholder="Sampa" required>
-                        </div
+                            <input type="text" class="form-control" value="${nomeCliente.getTelefone()} " id="validationServer03" placeholder="11000000" required>
+                        </div>
+                        <div class="form-group col-md-6 mb-3">
+                            <div class="col-md-3 mb-3">
+                                <label for="validationServer03">Data</label>
+                                <input type="text" class="form-control" value="" name="data" id="validationServer01" placeholder="10/01/1992" required>
+                            </div>
+                        </div>
                     </div>
-
-
-
                     <div class="form-row">
-                        <div class="form-group col-md-2 mb-2">
+                        <div class="col-md-2 mb-3">
                             <label for="exampleFormControlSelect1">Serviço</label>
-
-
-
-                            <select class="form-control" name="servico" id="exampleFormControlSelect1">
-                                <c:forEach items="${servicos}" var="servicos"> 
-                                    <option value="${servicos.getNome()}">${servicos.getNome()}</option>
-                                </c:forEach> 
-
+                                <select class="form-control" name="servico" id="exampleFormControlSelect1">
+                                    <c:forEach items="${servicos}" var="servicos"> 
+                                        <option value="${servicos.getNome()}">${servicos.getNome()}</option>
+                                    </c:forEach> 
+                                </select>
+                        </div>
+                        <div class="form-group col-md-2 mb-2">
+                            <label for="exampleFormControlSelect1">Horário</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="horario" >
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
                             </select>
-
                         </div>
-                    </div>
-
-                    <div class="form-group col-md-2 mb-2">
-                        <label for="exampleFormControlSelect1">Horário</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="horario" >
-                            <option value="09:00">09:00</option>
-                            <option value="10:00">10:00</option>
-                            <option value="11:00">11:00</option>
-                            <option value="13:00">13:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="15:00">15:00</option>
-                            <option value="16:00">16:00</option>
-                            <option value="17:00">17:00</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
-                        <div class="col-md-3 mb-3">
-                            <label for="validationServer03">Data</label>
-                            <input type="text" class="form-control" value="" name="data" id="validationServer01" placeholder="10/01/1992" required>
-                        </div>
-                    </div>
                     </div>
                     <div>
                         <button class="btn btn-dark" type="submit">Agendar</button>
