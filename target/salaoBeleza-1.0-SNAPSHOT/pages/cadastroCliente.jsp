@@ -26,7 +26,7 @@
     <div class="bg-dark p-4">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="/pages/index.jsp">Home</a>
+            <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="agendamentosDoDia">Home</a>
         </li>
         <li class="nav-item">
           <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>

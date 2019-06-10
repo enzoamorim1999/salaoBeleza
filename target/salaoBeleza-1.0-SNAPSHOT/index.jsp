@@ -1,5 +1,5 @@
 <%--
-    Document   : index
+    Document   : agendamentosDoDia
     Created on : 23/05/2019,13:00:15
     Author     : davi.msantos7
 --%>
@@ -28,7 +28,7 @@
             <div class="bg-dark p-4">
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="index.jsp">Home</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="agendamentosDoDia">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
@@ -69,9 +69,7 @@
                         </div>
 
                         <thead>
-                            <%
-                                ArrayList<Agendamento> agenda = (ArrayList<Agendamento>) request.getAttribute("agenda");
-                            %>
+
 
                             <tr>
                                 <th>Id</th>
@@ -81,14 +79,18 @@
                                 <th> Agendamento</th>
                             </tr>
                         </thead>
+                        <%
+                                ArrayList<Agendamento> listaAgenda = (ArrayList<Agendamento>) request.getAttribute("listaAgenda");
+                        %>
                         <tbody>
-                            <c:forEach items="${agenda}" var="agenda">
+                            <c:forEach items="${listaAgenda}" var="listaAgenda">
                                 <tr>
-                                    <th>${agenda.getId()}</th>
-                                    <th class="hidden-xs">${agenda.getNome()}</th>
-                                    <th>${agenda.getCpf()}</th>
-                                    <th class="hidden-xs">${agenda.getTelefone()}</th>
+                                    <th>${listaAgenda.getNome()}</th>
+                                    <th class="hidden-xs">${listaAgenda.getServico()}</th>
+                                    <th>${listaAgenda.getHorario()}</th>
+                                    <th class="hidden-xs">${listaAgenda.getData()}</th>
 
+                                    <% System.out.println("TESTE");%>
                                 </tr>
                             </c:forEach>
 
