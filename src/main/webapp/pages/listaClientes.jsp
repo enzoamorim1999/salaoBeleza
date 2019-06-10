@@ -49,7 +49,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
->>>>>>> ce24be7de044631985c68732e1344058100652ba
                     </li>
                 </ul>
             </div>
