@@ -10,6 +10,7 @@ com\poo\davi\enzo\salaobelezaServelets\excluirServico.class
 com\poo\davi\enzo\salaobeleza\Model\Cliente.class
 com\poo\davi\enzo\salaobelezaServelets\cadastroCliente.class
 com\poo\davi\enzo\salaobelezaServelets\listaServicos.class
+com\poo\davi\enzo\salaobelezaServelets\agendamentosDoDia.class
 com\poo\davi\enzo\salaobelezaServelets\excluirCliente.class
 com\poo\davi\enzo\salaobeleza\DAO\ServicoDAO.class
 com\poo\davi\enzo\salaobelezaServelets\novoAgendamento.class
