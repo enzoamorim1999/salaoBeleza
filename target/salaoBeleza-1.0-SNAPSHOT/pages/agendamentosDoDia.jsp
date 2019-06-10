@@ -34,7 +34,7 @@
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaAgendamentos"%>">Agendamentos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">ServiÃ§os</a>
+                        <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaServicos"%>">Serviços</a>
                     </li>
                     <li class="nav-item">
                         <a class="navbar-brand"  aria-haspopup="true" aria-expanded="false" href="<%= request.getContextPath() + "/listaClientes"%>">Clientes</a>
@@ -72,11 +72,10 @@
 
 
                             <tr>
-                                <th>Id</th>
-                                <th class="hidden-xs">Nome</th>
-                                <th>CPF</th>
-                                <th class="hidden-xs">Telefone</th>
-                                <th> Agendamento</th>
+                                <th>Nome</th>
+                                <th class="hidden-xs">Serviço</th>
+                                <th>Horário</th>
+                                <th class="hidden-xs">Data</th>
                             </tr>
                         </thead>
                         <%
